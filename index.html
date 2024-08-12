@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src=
+    "https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src=
+    "https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>login page</title>
+</head>
+<body>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-sm-6 mx-auto">
+                <div class="card border shadow">
+                    <div class="card-header">
+                        <h3 class="card-title text-center font-weight-bold">Login page</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="/" method="POST" id="loginForm">
+                            <div class="form-group row">
+                                <label for="email" class="col-sm-3 col-form-label">
+                                    Email
+                                </label>
+                                    <div class="col-sm-9">
+                                    <input 
+                                    type="email"
+                                    name="email" 
+                                    class="form-control" 
+                                    id="Email"
+                                    placeholder="123@gmail.com" 
+                                    required>
+                                    </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="password" class="col-sm-3 col-form-label">
+                                    Password
+                                </label>
+                            <div class="col-sm-9">
+                                <input type="password" 
+                                name="password" 
+                                class="form-control" 
+                                id="password" 
+                                placeholder="Enter your password" 
+                                required>
+                            </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-3"></div>
+                                <div class="col sm-9">
+                                    <a class="btn btn-link">Forget password?</a>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-9">
+                                    <button class="btn btn-primary btn-block" id="login" type="submit">
+                                        Login
+                                    </button>
+                                </div>
+                             </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $.validator.setDefaults({
+                submitHandler: function() {
+                    swal({
+                    title: "Login Success",
+                    icon: "success",
+                    button: "OK"
+                }).then(function(){
+                    window.location = "https://pandiyaraj98.github.io/booksky-js/";
+                });
+                }
+            })
+
+            $("#loginForm").validate({
+                rules: {
+                    Email:{
+                        required: true,
+                        Email: true
+                    },
+                    password:{
+                        required: true,
+                        minlength: 5,
+                    }
+                },
+                messages: {
+                    password: {
+                        required: "*Please enter password",
+                        minlength: "*Please enter atleast 5 characters"
+                    }
+                }
+                
+                
+            });
+
+        });
+    </script>
+</body>
+</html>

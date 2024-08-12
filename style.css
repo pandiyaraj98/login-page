@@ -1,0 +1,12 @@
+    
+body{
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(48,148,193,1) 47%, rgba(46,214,249,1) 73%);
+}
+.card{
+    border-radius: 0.5rem;
+}
+.error{
+    color: rgb(241, 36, 36);
+    font-size: smaller;
+}
